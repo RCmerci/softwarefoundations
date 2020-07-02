@@ -89,3 +89,11 @@ Proof.
     rewrite <- double_negb.
     reflexivity.
 Qed.
+
+Theorem mult_0_plus' : forall n m : nat,
+  (0 + n) * m = n * m.
+Proof.
+  intros n m.
+  assert (H: n = 0 + n). { reflexivity. }
+  rewrite -> H.
+  reflexivity. Qed.
